@@ -1,0 +1,10 @@
+before_script:
+  - sudo apt-get -y -qq install curl make libgc-dev
+  - export PATH=$PATH:$PWD/rock/bin:$PWD/sam
+  - git clone --depth=1 git://github.com/fasterthanlime/rock.git
+  - git clone --depth=1 git://github.com/fasterthanlime/sam.git
+  - (cd rock && make -s quick-rescue)
+  - (cd sam && rock -v)
+
+script:
+  - sam test
