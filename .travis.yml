@@ -1,4 +1,5 @@
 before_script:
+  - sudo apt-get update
   - sudo apt-get -y -qq install curl make libgc-dev
   - export PATH=$PATH:$PWD/rock/bin:$PWD/sam
   - git clone --depth=1 git://github.com/fasterthanlime/rock.git
